@@ -30,9 +30,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.*;
 
-/**
- * Unit Test for TypeService methods
- */
 @ExtendWith(MockitoExtension.class)
 class TypeServiceTest {
 
@@ -51,9 +48,6 @@ class TypeServiceTest {
     @Captor
     private ArgumentCaptor<Type> typeCaptor;
 
-    /**
-     * Method under test: {@link TypeService#findById(long)}
-     */
     @ParameterizedTest
     @CsvFileSource(resources = "/data/types.csv")
     void findById_should_returnTypeResponse_when_TypeIsFound(long id, String name, String description) {
@@ -92,9 +86,6 @@ class TypeServiceTest {
         verify(typeRepository).findById(id);
     }
 
-    /**
-     * Method under test: {@link TypeService#getById(long)}
-     */
     @ParameterizedTest
     @CsvFileSource(resources = "/data/types.csv")
     void getById_should_returnType_when_TypeIsFound(long id, String name, String description) {

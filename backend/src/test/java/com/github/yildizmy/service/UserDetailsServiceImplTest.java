@@ -19,9 +19,6 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
-/**
- * Unit Test for UserDetailsServiceImpl methods
- */
 @ExtendWith(MockitoExtension.class)
 class UserDetailsServiceImplTest {
 
@@ -31,12 +28,10 @@ class UserDetailsServiceImplTest {
     @Mock
     private UserRepository userRepository;
 
-    /**
-     * Method under test: {@link UserDetailsServiceImpl#loadUserByUsername(String)}
-     */
+
     @ParameterizedTest
     @CsvFileSource(resources = "/data/auth.csv")
-    void loadUserByUsername_should_returnUserDetails_when_UserIsFound(long id, String username, String password) throws UsernameNotFoundException {
+    void loadUserByUsername_shouldReturnUserDetails_when_UserIsFound(long id, String username, String password) throws UsernameNotFoundException {
         User user = new User();
         user.setId(id);
         user.setUsername(username);
