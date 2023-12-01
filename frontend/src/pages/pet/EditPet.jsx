@@ -95,27 +95,7 @@ const EditPet = () => {
                   onChange={handleInputChange}
                 />
               </Grid>
-              <Grid item>
-                <FormControl sx={{ width: 240 }}>
-                  <InputLabel id="demo-select-small">Type</InputLabel>
-                  <Select
-                    required
-                    name="typeId"
-                    label="Type"
-                    value={formValues.typeId}
-                    onChange={handleInputChange}
-                  >
-                    <MenuItem value="">
-                      <em>------------ none ------------</em>
-                    </MenuItem>
-                    {types.map((type) => (
-                      <MenuItem key={type.id} value={type.id}>
-                        {type.name}
-                      </MenuItem>
-                    ))}
-                  </Select>
-                </FormControl>
-              </Grid>
+
             </Grid>
             <Stack spacing={2} sx={{ py: 3, paddingRight: 0 }} direction="row">
               <Button
