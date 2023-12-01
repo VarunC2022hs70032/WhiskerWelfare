@@ -88,9 +88,6 @@ class AuthServiceTest {
         verify(authenticationManager).authenticate(any());
     }
 
-    /**
-     * Method under test: {@link AuthService#signup(UserRequest)}
-     */
     @ParameterizedTest
     @CsvFileSource(resources = "/data/auth.csv")
     void signup_should_returnCommandResponse_when_UserSignup(long id, String username, String password, String credentials, String role, String token) throws AuthenticationException {

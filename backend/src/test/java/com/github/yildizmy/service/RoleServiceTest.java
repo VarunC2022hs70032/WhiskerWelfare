@@ -28,11 +28,9 @@ class RoleServiceTest {
     @Mock
     private RoleRepository roleRepository;
 
-    /**
-     * Method under test: {@link RoleService#findAll()}
-     */
+
     @Test
-    void findAll_should_returnRoleList() {
+    void findAll_shouldReturnRoleList() {
         Role role = new Role();
         role.setId(101L);
         role.setType(RoleType.ROLE_USER);

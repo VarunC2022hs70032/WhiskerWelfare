@@ -106,7 +106,7 @@ class UserServiceTest {
      * Method under test: {@link UserService#findById(long)}
      */
     @Test
-    void findById_should_throwNoSuchElementFoundException_when_UserIsNotFound() {
+    void findById_shouldThrowNoSuchElementFoundException_when_UserIsNotFound() {
         long id = 101L;
         when(userRepository.findById(id)).thenReturn(Optional.empty());
 
@@ -117,9 +117,6 @@ class UserServiceTest {
         verify(userRepository).findById(id);
     }
 
-    /**
-     * Method under test: {@link UserService#getById(long)}
-     */
     @ParameterizedTest
     @CsvFileSource(resources = "/data/users.csv")
     void getById_should_returnUser_when_UserIsFound(long id, String username, String firstName, String lastName, String fullName, String role) {

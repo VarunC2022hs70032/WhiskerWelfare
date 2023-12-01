@@ -17,12 +17,10 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 class PetControllerTest extends IntegrationTest {
 
-    /**
-     * Method under test: {@link PetController#findById(long)}
-     */
+
     @Test
     @WithMockUser(username = "user", roles = {"USER"})
-    void findById_should_returnStatusIsOk_when_PetIsFound() throws Exception {
+    void findById_shouldReturnStatusIsOk_when_PetIsFound() throws Exception {
         mvc.perform((get("/api/v1/pets/{id}", 1)))
                 .andDo(print())
                 .andExpect(status().isOk())
@@ -127,7 +125,7 @@ class PetControllerTest extends IntegrationTest {
      */
     @Test
     @WithMockUser(username = "user", roles = {"USER"})
-    void create_should_returnStatusIsUnprocessableEntity_when_PetNameIsTooShort() throws Exception {
+    void create_should_returnStatusIsUnprocessableEntityWhen_PetNameIsTooShort() throws Exception {
         mvc.perform(post("/api/v1/pets")
                         .contentType(MediaType.APPLICATION_JSON)
                         .content("{\n\"name\": \"X\",\n\"typeId\": 2,\n\"userId\": 1\n}")
