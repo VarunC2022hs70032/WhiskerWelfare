@@ -25,12 +25,6 @@ The information about the entities is given on [Entity Relationship Diagram](bac
 
 <br/>
 
-### Getting Started
-
-In order to run and test the application, see details on [How to run?](backend/src/main/resources/docs/how_to_run.md) and [How to test?](backend/src/main/resources/docs/how_to_test.md) sections.
-
-<br/>
-
 ### Dependencies
 
 * Spring Boot
