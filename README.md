@@ -17,8 +17,6 @@ attribute, except username.
 
 <img src="backend/src/main/resources/docs/images/statistic_view.png" width="1060"/>
 
-<br/>
-
 ### Domain Model
 
 The information about the entities is given on [Entity Relationship Diagram](backend/src/main/resources/docs/er_diagram.md) section.
@@ -52,11 +50,4 @@ The information about the entities is given on [Entity Relationship Diagram](bac
 [Material UI](https://mui.com/)<br/>
 [Notistack](https://notistack.com/features/basic)<br/>
 
-<br/>
-
-### Version History
-
-* v1.0.0 Initial Release
-
-<br/>
 <br/>
