@@ -17,6 +17,56 @@ import AuthService from "../../services/AuthService";
 import HttpService from "../../services/HttpService";
 import "./pet.scss";
 
+const NewPet = () => {
+  const pageTitle = "Add New Pet";
+  const defaultValues = {
+    name: "",
+    typeId: "",
+    userId: AuthService.getCurrentUser()?.id,
+  };
+
+  const { enqueueSnackbar } = useSnackbar();
+  const navigate = useNavigate();
+  const [formValues, setFormValues] = useState(defaultValues);
+  const [types, setTypes] = useState([]);
+
+  useEffect(() => {
+    const getTypes = async () => {
+      const response = await HttpService.getWithAuth("/types");
+      const types = await response.data.content;
+      setTypes(types);
+    };
+    getTypes();
+  }, []);
+
+  const handleInputChange = (e) => {
+    const { name, value } = e.target;
+    setFormValues({
+      ...formValues,
+      [name]: value,
+    });
+  };
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    HttpService.postWithAuth("/pets", formValues)
+      .then((response) => {
+        enqueueSnackbar("Pet created successfully", { variant: "success" });
+        navigate("/pets");
+      })
+      .catch((error) => {
+        if (error.response?.data?.errors) {
+          error.response?.data?.errors.map((e) =>
+            enqueueSnackbar(e.field + " " + e.message, { variant: "error" })
+          );
+        } else if (error.response?.data?.message) {
+          enqueueSnackbar(error.response?.data?.message, { variant: "error" });
+        } else {
+          enqueueSnackbar(error.message, { variant: "error" });
+        }
+      });
+  };
+
   return (
     <div className="single">
       <Sidebar />
