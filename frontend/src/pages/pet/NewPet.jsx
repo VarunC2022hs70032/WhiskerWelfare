@@ -128,6 +128,7 @@ const NewPet = () => {
               <Button sx={{ minWidth: 112 }} type="submit" variant="contained">
                 Add
               </Button>
+
             </Stack>
           </form>
         </div>
