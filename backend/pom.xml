@@ -18,6 +18,11 @@
         <projectlombok.version>1.18.26</projectlombok.version>
         <mapstruct.version>1.5.3.Final</mapstruct.version>
         <testcontainers.version>1.17.6</testcontainers.version>
+
+        <!-- SonarQube Properties -->
+        <sonar.host.url>http://13.51.86.101:9000/</sonar.host.url>
+        <sonar.login>sqa_56131c57b0678a4cd4c28865630897f1964b81b3</sonar.login>
+        <!-- Add any other SonarQube properties as needed -->
     </properties>
     <dependencies>
         <dependency>
